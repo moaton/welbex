@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100 mt-4 mb-3">
+  <div class="w-100 mt-4 mb-3" style="position: relative;">
     <div class="container">
       <ul class="nav nav-tabs">
         <li class="nav-item">
@@ -11,7 +11,7 @@
       </ul>
     </div>
     <div class="container shadow-sm" style="border-top: 1px solid #dee2e6; border-radius: 0.25rem;">
-      <Table v-if="view === 'test'" />
+      <Table v-if="view === 'test'" @showAddModal="showModal = true" />
       <Resume v-else />
     </div>
   </div>
@@ -22,6 +22,7 @@ import Table from './components/Table.vue'
 import Resume from './components/Resume.vue'
 
 import './assets/css/null.css'
+
 export default {
   name: 'App',
   components: {
@@ -30,8 +31,14 @@ export default {
   },
   data() {
     return {
-      view: 'test'
+      view: 'test',
+      showModal: false,
     }
+  },
+  mounted() {
+    this.$store.dispatch('getData')
+  },
+  methods: {
   },
 }
 </script>
