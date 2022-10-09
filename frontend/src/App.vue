@@ -10,7 +10,7 @@
         </li>
       </ul>
     </div>
-    <div class="container shadow-sm" style="border-top: 1px solid #dee2e6; border-radius: 0.25rem;">
+    <div class="container shadow" style="border-top: 1px solid #dee2e6; border-radius: 0.25rem;">
       <Table v-if="view === 'test'" @showAddModal="showModal = true" />
       <Resume v-else />
     </div>
@@ -22,6 +22,8 @@ import Table from './components/Table.vue'
 import Resume from './components/Resume.vue'
 
 import './assets/css/null.css'
+import './assets/css/bootstrap.css'
+
 
 export default {
   name: 'App',
